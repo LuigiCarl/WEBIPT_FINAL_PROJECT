@@ -10,31 +10,26 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="relative px-4 py-4 flex justify-between items-center bg-white shadow-lg">
+      <nav className="relative px-4 py-4 flex justify-between items-center bg-white shadow-lg h-16">
         {/* Logo */}
         <a className="text-3xl font-bold leading-none" href="#">
-          <img src="/logo4.png" alt="Logo" className="h-16 w-16" />
+          <img src="/logo.png" alt="Logo" className="h-16 w-16" />
         </a>
 
-        {/* Center Menu */}
-        <div className="hidden md:flex space-x-6 ml-auto mr-8">
-          <a className="text-gray-600 hover:text-blue-600 text-sm font-semibold" href="#">
-            Home
-          </a><HiOutlineDotsVertical />
-          <a className="text-gray-600 hover:text-blue-600 text-sm font-semibold" href="#">
-            Services
-          </a><HiOutlineDotsVertical />
-          <a className="text-gray-600 hover:text-blue-600 text-sm font-semibold" href="#">
-            About
-          </a><HiOutlineDotsVertical />
-          <a className="text-gray-600 hover:text-blue-600 text-sm font-semibold" href="#">
-            Contact
-          </a>
-        </div>
+        {/* Navigation Menu */}
+        <ul className="hidden md:flex space-x-6 text-gray-600 font-semibold ml-auto mr-8">
+          <li><a href="#home" className="hover:text-blue-600">Home</a></li>
+          <HiOutlineDotsVertical />
+          <li><a href="#services" className="hover:text-blue-600">Services</a></li>
+          <HiOutlineDotsVertical />
+          <li><a href="#about" className="hover:text-blue-600">About</a></li>
+          <HiOutlineDotsVertical />
+          <li><a href="#contact" className="hover:text-blue-600">Contact</a></li>
+        </ul>
 
         {/* Mobile Menu Button */}
         <button
-          className="text-black-600 lg:hidden"
+          className="text-gray-600 lg:hidden"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <HiOutlineX className="w-6 h-6" /> : <HiOutlineMenu className="w-6 h-6" />}
